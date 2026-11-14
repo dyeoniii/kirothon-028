@@ -13,7 +13,7 @@ export default function App() {
     }
   }, [location]);
   return <main className="mx-auto max-w-3xl px-5 py-14">
-    <p className="text-sm font-bold tracking-widest text-indigo-600">CATCH TROLLS</p>
+    <p className="text-sm font-bold tracking-widest text-indigo-600">악성 댓글 증거 관리</p>
     <h1 className="mt-3 text-3xl font-bold">Catch Trolls</h1>
     <p className="mt-3 text-slate-600">악플 분석부터 증거 정리까지. 현재는 개발 시작용 화면입니다.</p>
     <section className="mt-8 rounded-xl border bg-white p-6 shadow-sm">

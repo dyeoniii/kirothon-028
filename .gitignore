@@ -18,3 +18,4 @@ frontend/.vite/
 backend/.venv/
 frontend/.env.local
 backend/.env
+*.tsbuildinfo

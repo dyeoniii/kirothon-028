@@ -95,24 +95,30 @@ SNS 게시물이나 영상의 악성 댓글을 경험했지만, 어떤 댓글을
 
 ```bash
 # 1. 저장소 다운로드
-git clone https://github.com/dyeoniii/Potato.git
-cd Potato
+git clone https://github.com/dyeoniii/kirothon-028.git
+cd kirothon-028
 
 # 2. 백엔드 가상환경 생성 및 의존성 설치
 python3 -m venv venv
 source venv/bin/activate
 python -m pip install -r backend/requirements.txt
 
-# 3. 백엔드 실행 (터미널 1)
+# 3. 환경변수 파일 생성 (키는 직접 입력, 절대 커밋하지 않음)
+cp backend/.env.example backend/.env    # GEMINI_API_KEY, YOUTUBE_API_KEY 입력
+cp frontend/.env.example frontend/.env.local
+
+# 4. 백엔드 실행 (터미널 1)
 python -m uvicorn app.main:app --app-dir backend \
   --host 127.0.0.1 --port 8000 --reload --reload-dir backend
 
-# 4. 프론트엔드 의존성 설치 및 실행 (터미널 2)
+# 5. 프론트엔드 의존성 설치 및 실행 (터미널 2)
 cd frontend
 npm install
-# frontend/.env.local 파일에서 VITE_USE_MOCK=false 설정 후
+# frontend/.env.local 에서 VITE_USE_MOCK=false 인지 확인 후
 npm run dev
 ```
+
+`LLM_PROVIDER`는 `gemini`(기본) 또는 `mock`을 사용하도록 설계했습니다. `mock`의 AI 결과는 실제 분석이 아닙니다.
 
 프론트엔드 개발 서버는 `vite.config.ts`의 `/api` 프록시를 통해 `127.0.0.1:8000` FastAPI로 연결됩니다. 백엔드만 확인하려면 `http://127.0.0.1:8000/api/health`에 접속합니다.
 
@@ -129,10 +135,11 @@ npm run dev
 cd frontend
 npm run build
 
-# 백엔드 테스트 (프로젝트 루트에서)
+# 백엔드 테스트 (backend 폴더에서 실행해야 app 모듈을 찾음)
+cd ../backend
+source ../venv/bin/activate
+python -m pytest -q
 cd ..
-source venv/bin/activate
-python -m pytest backend/tests -q
 
 # 백엔드 헬스체크 (백엔드 실행 중)
 curl -i http://127.0.0.1:8000/api/health
