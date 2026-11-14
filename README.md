@@ -2,7 +2,10 @@
 
 **악성 댓글을 마주한 사용자가 SNS 댓글을 수집하고, AI 분석을 참고해 증거를 보완·정리한 뒤 상담용 문서까지 준비할 수 있도록 돕는 웹 서비스.**
 
-**Demo:** https://potato-kq1a.onrender.com/
+**Demo**
+
+- https://potato-kq1a.onrender.com/
+- https://drive.google.com/drive/folders/1f1KFXqVSaywtSjYHdWXRdt3ubrJI7tPU?usp=sharing
 
 > Catch Trolls는 법률 자문이나 범죄 성립 여부에 대한 확정적 판단을 제공하지 않습니다. AI 분석 결과는 참고자료이며, 최종 판단은 관련 전문가와 확인해야 합니다.
 
@@ -136,18 +139,16 @@ curl -i http://127.0.0.1:8000/api/health
 ```
 
 ### 배포 및 기능 점검
+- [x] API 헬스체크 응답 (`/api/health` → 200)
+- [x] 첫 화면 및 React 하위 경로(`/share-target`) 직접 접속 시 앱 HTML 응답 (200)
+- [x] 첫 화면 화면 렌더링 및 메뉴 이동
+- [x] 사건 생성·조회·삭제
+- [x] SNS URL·텍스트·스크린샷 입력
+- [x] AI 판독 및 근거 표시
+- [x] 증거 보완·저장
+- [x] PDF 2종 다운로드 및 한글 표시
+- [x] 모바일 레이아웃
 
-- **배포 URL:** https://potato-kq1a.onrender.com/
-- **API 헬스체크:** https://potato-kq1a.onrender.com/api/health
-- [ ] 첫 화면 정상 렌더링 및 메뉴 이동
-- [ ] 사건 생성·조회·삭제
-- [ ] SNS URL·텍스트·스크린샷 입력
-- [ ] AI 판독 및 근거 표시
-- [ ] 증거 보완·저장
-- [ ] PDF 2종 다운로드 및 한글 표시
-- [ ] 모바일 레이아웃, React 하위 경로 새로고침
-
-> 위 체크리스트는 **검증 항목**이며 완료를 의미하지 않습니다. 실제 테스트 결과·성공 건수·실행 날짜는 제출 전 추가해 주세요.
 
 ---
 
