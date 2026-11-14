@@ -1,0 +1,4 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body { margin: 0; font-family: system-ui, -apple-system, 'Apple SD Gothic Neo', sans-serif; background: #f8fafc; color:#0f172a; }

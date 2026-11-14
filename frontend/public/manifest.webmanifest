@@ -1,0 +1,19 @@
+{
+  "name": "악플가드",
+  "short_name": "악플가드",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "theme_color": "#f8fafc",
+  "background_color": "#f8fafc",
+  "share_target": {
+    "action": "/share-target",
+    "method": "GET",
+    "enctype": "application/x-www-form-urlencoded",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url"
+    }
+  }
+}
