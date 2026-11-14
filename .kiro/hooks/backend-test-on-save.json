@@ -1,0 +1,16 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "백엔드 저장 시 pytest",
+      "trigger": "PostFileSave",
+      "description": "backend Python 파일 저장 시 pytest를 실행한다",
+      "matcher": "backend/.*\\.py$",
+      "action": {
+        "type": "command",
+        "command": "cd backend && ../venv/bin/python -m pytest -q -W ignore 2>&1 | tail -5",
+        "timeout": 90
+      }
+    }
+  ]
+}

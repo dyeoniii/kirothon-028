@@ -1,0 +1,16 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "프론트 저장 시 타입체크",
+      "trigger": "PostFileSave",
+      "description": "frontend TS/TSX 파일 저장 시 타입체크를 실행한다",
+      "matcher": "frontend/src/.*\\.(ts|tsx)$",
+      "action": {
+        "type": "command",
+        "command": "cd frontend && npx tsc --noEmit 2>&1 | tail -15",
+        "timeout": 90
+      }
+    }
+  ]
+}

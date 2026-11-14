@@ -1,0 +1,15 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "법률 자문 아님 고지 점검",
+      "trigger": "PostFileSave",
+      "description": "분석·문서·화면 코드에 법률 자문 아님 고지와 금지 표현을 점검한다",
+      "matcher": "(backend/app/(analysis|documents)/|frontend/src/pages/).*",
+      "action": {
+        "type": "agent",
+        "prompt": "방금 저장한 파일이 AI 분석 결과나 PDF를 사용자에게 보여주는 코드라면 \"AI 분석은 법률 자문이 아닙니다\" 고지가 포함되어 있는지 확인하세요. 고소 가능 확정, 승소 예측, 출처 없는 작성자·시각 창작 표현이 있으면 제거하세요. 해당 사항이 없으면 아무것도 하지 마세요."
+      }
+    }
+  ]
+}
