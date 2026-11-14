@@ -1,4 +1,4 @@
-# 악플가드 — 실행 가능한 초기 골격 + Kiro Crew 4세션 작업 패키지
+# Catch Trolls — 실행 가능한 초기 골격 + Kiro Crew 4세션 작업 패키지
 
 > **이 패키지는 설정/스캐폴드가 준비된 시작점입니다. 핵심 앱 기능은 아직 미구현입니다.**
 > 시작 화면과 `/api/health`만 작동하며 AI 판독/증거 관리/유튜브 조회/PDF는 각 Kiro 세션이 구현해야 합니다.
@@ -13,7 +13,7 @@
 ```bash
 git init
 git add .
-git commit -m 'chore: bootstrap akpleguard Kiro Crew starter'
+git commit -m 'chore: bootstrap catch-trolls Kiro Crew starter'
 git branch -M main
 # GitHub에 빈 private repository를 만든 뒤:
 git remote add origin <REPOSITORY_URL>

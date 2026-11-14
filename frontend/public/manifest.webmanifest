@@ -1,6 +1,6 @@
 {
-  "name": "악플가드",
-  "short_name": "악플가드",
+  "name": "Catch Trolls",
+  "short_name": "Catch Trolls",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
